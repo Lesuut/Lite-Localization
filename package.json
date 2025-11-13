@@ -2,7 +2,7 @@
   "name": "com.gullsoft.litelocalization",
   "version": "1.0.0",
   "displayName": "Lite Localization",
-  "description": "Lite Localization for your game",
+  "description": "<b>Lite Localization</b>\nis a lightweight package for simple and clean localization in Unity projects. No complex setup, no unnecessary overhead — just straightforward and transparent localization.",
   "unity": "2022.1",
   "keywords": [
     "Localization",
