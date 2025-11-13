@@ -14,9 +14,9 @@ No complex setup, no unnecessary overhead — just straightforward and transpare
 https://github.com/Lesuut/Lite-Localization.git
 ```
 
-## Usage
+### Usage
 1. Open **Project Settings → Game → Lite Localization**  
-   ![MainWindow](Screenshots/MainWindow.jpg)
+![MainWindow](Screenshots/MainWindow.jpg)
 
 2. Configure the localization parameters:
    - **Default Language** — the language used when the game starts
