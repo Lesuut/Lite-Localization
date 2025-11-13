@@ -14,6 +14,13 @@ No complex setup, no unnecessary overhead — just straightforward and transpare
 - Works with both Unity UI and TextMeshPro
 
 # Installation
+![MainWindow](Screenshots/PackageManager0.jpg)
+
+![MainWindow](Screenshots/PackageManager1.jpg)
+
+```
+https://github.com/Lesuut/Lite-Localization.git
+```
 
 # Settings
 1. Open **Project Settings → Game → Lite Localization**  
