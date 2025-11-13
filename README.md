@@ -1,28 +1,20 @@
-# 🌍 Lite Localization
-
+## 🌍 Lite Localization
 **Lite Localization** is a lightweight package for simple and clean localization in Unity projects.  
 No complex setup, no unnecessary overhead — just straightforward and transparent localization.
 
----
-
-# Features
+### Features
 - Key-free system — the original text itself is the translation key
 - Automatic population — missing translations are appended to the CSV file automatically
 - Lightweight — minimal dependencies and overhead
-- Event-driven architecture — subscribe to language changes for dynamic UI updates
-- Built-in UI components — dropdowns and text translators included
-- Works with both Unity UI and TextMeshPro
 
-# Installation
+### Installation
 ![MainWindow](Screenshots/PackageManager0.jpg)
-
 ![MainWindow](Screenshots/PackageManager1.jpg)
-
 ```
 https://github.com/Lesuut/Lite-Localization.git
 ```
 
-# Settings
+## Usage
 1. Open **Project Settings → Game → Lite Localization**  
    ![MainWindow](Screenshots/MainWindow.jpg)
 
@@ -31,7 +23,7 @@ https://github.com/Lesuut/Lite-Localization.git
    - **Source Language** — the language your original text is written in
    - **Languages Text Asset** — CSV file containing translations (assign an empty CSV file)
 
-# Adding Languages
+#### Adding Languages
 Add supported languages in the following format: `LocaleCode - DisplayName`
 
 Example:
@@ -43,7 +35,7 @@ Where:
 The first value is the locale code (`en`, `ru`, `fr`, etc.)  
 The second value is the name displayed in the language selection dropdown.
 
-# API
+#### API
 ```csharp
 Debug.Log(LiteLocalizationManager.Instance.Translate("Hello World"));
 ```
@@ -72,7 +64,7 @@ public class DynamicText : MonoBehaviour
     }
 }
 ```
-# How It Works
+#### How It Works
 Lite Localization is built around a **key-free** translation workflow:
 - You call `Translate()` with a phrase written in your source language
 - This original phrase is treated as the translation key
