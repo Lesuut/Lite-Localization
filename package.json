@@ -1,10 +1,10 @@
 {
-  "name": "com.GullSoft.LiteLocalization",
+  "name": "com.gullsoft.litelocalization",
   "version": "1.0.0",
   "displayName": "Lite Localization",
   "description": "Lite Localization for your game",
   "unity": "2022.1",
- "keywords": [
+  "keywords": [
     "Localization",
     "Lite",
     "Game"
@@ -14,4 +14,3 @@
     "email": "gullsoftgame@gmail.com"
   }
 }
-
