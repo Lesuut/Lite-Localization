@@ -1,0 +1,17 @@
+{
+  "name": "com.GullSoft.LiteLocalization",
+  "version": "1.0.0",
+  "displayName": "Lite Localization",
+  "description": "Lite Localization for your game",
+  "unity": "2022.1",
+ "keywords": [
+    "Localization",
+    "Lite",
+    "Game"
+  ],
+  "author": {
+    "name": "Artem Chaikin",
+    "email": "gullsoftgame@gmail.com"
+  }
+}
+
