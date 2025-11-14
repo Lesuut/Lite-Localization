@@ -2,6 +2,10 @@
 **Lite Localization** is a lightweight package for simple and clean localization in Unity projects.  
 No complex setup, no unnecessary overhead — just straightforward and transparent localization.
 
+[![Unity Version](https://img.shields.io/badge/Unity-2022.1%2B-blue.svg)](https://unity3d.com/get-unity/download)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub release](https://img.shields.io/github/v/release/Lesuut/Lite-Localization)](https://github.com/Lesuut/Lite-Localization/releases)
+
 ### Features
 - Key-free system — the original text itself is the translation key
 - Automatic population — missing translations are appended to the CSV file automatically
