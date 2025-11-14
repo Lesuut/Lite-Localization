@@ -41,7 +41,7 @@ The second value is the name displayed in the language selection dropdown.
 
 #### API
 ```csharp
-Debug.Log(LiteLocalizationManager.Instance.Translate("Hello World"));
+Debug.Log(LiteLocalizationManager.Translate("Hello World"));
 ```
 ```csharp
 using UnityEngine;
@@ -64,11 +64,12 @@ public class DynamicText : MonoBehaviour
 
     private void UpdateText()
     {
-        textComponent.text = LiteLocalizationManager.Instance.Translate("Welcome to the game");
+        textComponent.text = LiteLocalizationManager.Translate("Welcome to the game");
     }
 }
 ```
 #### How It Works
+![Spreadsheet](Screenshots/Spreadsheet.jpg)
 Lite Localization is built around a **key-free** translation workflow:
 - You call `Translate()` with a phrase written in your source language
 - This original phrase is treated as the translation key

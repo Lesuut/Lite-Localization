@@ -31,10 +31,10 @@ namespace LiteLocalization.Runtime.UI
         private void UpdateText()
         {
             if (_text != null)
-                _text.text = LiteLocalizationManager.Instance.Translate(_originalText);
+                _text.text = LiteLocalizationManager.Translate(_originalText);
 
             if (_textTMP != null)
-                _textTMP.text = LiteLocalizationManager.Instance.Translate(_originalText);
+                _textTMP.text = LiteLocalizationManager.Translate(_originalText);
         }
     }
 }

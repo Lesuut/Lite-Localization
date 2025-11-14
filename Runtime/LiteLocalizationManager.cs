@@ -57,12 +57,12 @@ namespace LiteLocalization.Runtime
             OnLanguageChanged?.Invoke();
         }
         
-        public string Translate(string key)
+        public static string Translate(string key)
         {
-            if (!_localizationTable.HasKey(key))
-                _localizationTableEditor.AddKey(key, LiteLocalizationSettings.Instance.SourceLanguage);
+            if (!Instance._localizationTable.HasKey(key))
+                Instance._localizationTableEditor.AddKey(key, LiteLocalizationSettings.Instance.SourceLanguage);
             
-            return _localizationTable.GetCell(key, _dataStorage.Data.LanguageCode);
+            return Instance._localizationTable.GetCell(key, Instance._dataStorage.Data.LanguageCode);
         }
     }
 }
