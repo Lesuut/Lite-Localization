@@ -17,7 +17,7 @@ namespace LiteLocalization.Runtime
             }
         }
         
-        public Action OnLanguageChanged;
+        public static Action OnLanguageChanged;
         
         private readonly LiteLocalizationDataStorage _dataStorage;
         private readonly LocalizationTable _localizationTable;

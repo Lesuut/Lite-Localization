@@ -53,13 +53,13 @@ public class DynamicText : MonoBehaviour
 
     private void OnEnable()
     {
-        LiteLocalizationManager.Instance.OnLanguageChanged += UpdateText;
+        LiteLocalizationManager.OnLanguageChanged += UpdateText;
         UpdateText();
     }
 
     private void OnDisable()
     {
-        LiteLocalizationManager.Instance.OnLanguageChanged -= UpdateText;
+        LiteLocalizationManager.OnLanguageChanged -= UpdateText;
     }
 
     private void UpdateText()

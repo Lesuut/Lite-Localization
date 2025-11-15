@@ -16,16 +16,16 @@ namespace LiteLocalization.Runtime.UI
                 _originalText = _text.text;
             else if (TryGetComponent<TMP_Text>(out _textTMP))
                 _originalText = _textTMP.text;
-
+            
             UpdateText();
-
-            LiteLocalizationManager.Instance.OnLanguageChanged += UpdateText;
+            
+            LiteLocalizationManager.OnLanguageChanged += UpdateText;
         }
 
         private void OnDestroy()
         {
             if (LiteLocalizationManager.Instance != null)
-                LiteLocalizationManager.Instance.OnLanguageChanged -= UpdateText;
+                LiteLocalizationManager.OnLanguageChanged -= UpdateText;
         }
 
         private void UpdateText()
