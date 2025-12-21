@@ -85,7 +85,9 @@ namespace LiteLocalization.Runtime
                 _table[i].Add("");
             }
 
+# if UNITY_EDITOR      
             SaveTable();
+#endif
         }
 
         public bool HasKey(string key)
@@ -120,7 +122,9 @@ namespace LiteLocalization.Runtime
             _table.Add(newRow);
             _keyIndexMap[key] = _table.Count - 1;
 
+# if UNITY_EDITOR
             SaveTable();
+#endif
         }
 
         public string GetValue(string key, string locale)
@@ -155,9 +159,11 @@ namespace LiteLocalization.Runtime
             int colIndex = _localeIndexMap[locale];
 
             _table[rowIndex][colIndex] = value;
+# if UNITY_EDITOR
             SaveTable();
+#endif
         }
-
+# if UNITY_EDITOR
         private void SaveTable()
         {
             string result = "";
@@ -181,7 +187,7 @@ namespace LiteLocalization.Runtime
                 Debug.LogError("Failed to find file path!");
             }
         }
-
+#endif
         public List<string> GetAllLocales()
         {
             return new List<string>(_locales.Skip(1));

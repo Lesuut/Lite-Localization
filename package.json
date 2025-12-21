@@ -1,6 +1,6 @@
 {
   "name": "com.gullsoft.litelocalization",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Lite Localization",
   "description": "Lightweight Unity localization package with automatic CSV translation management. Key-free system where original text is the translation key. Simple setup for multi-language games and apps.",
   "unity": "2022.1",
