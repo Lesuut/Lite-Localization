@@ -37,6 +37,7 @@ namespace LiteLocalization.Runtime
                 LiteLocalizationSettings.Instance.LanguagesTextAsset,
                 LiteLocalizationSettings.Instance.Separator);
             
+# if UNITY_EDITOR
             foreach (var languages in LiteLocalizationSettings.Instance.Languages)
             {
                 if (!_localizationTableEditor.HasLocale(languages.languageCode))
@@ -44,6 +45,7 @@ namespace LiteLocalization.Runtime
                     _localizationTableEditor.AddLocale(languages.languageCode);
                 }
             }
+#endif
         }
         
         public LanguageCodeItem GetCurrentLanguage() => LiteLocalizationSettings.Instance.Languages.First(x => x.languageCode == _dataStorage.Data.LanguageCode);
@@ -59,8 +61,10 @@ namespace LiteLocalization.Runtime
         
         public static string Translate(string key)
         {
+# if UNITY_EDITOR
             if (!Instance._localizationTable.HasKey(key))
                 Instance._localizationTableEditor.AddKey(key, LiteLocalizationSettings.Instance.SourceLanguage);
+#endif
             
             return Instance._localizationTable.GetCell(key, Instance._dataStorage.Data.LanguageCode);
         }
