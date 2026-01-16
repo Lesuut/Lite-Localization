@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using LiteLocalization.Runtime.Data;
+using UnityEngine;
 
 namespace LiteLocalization.Runtime
 {
@@ -26,7 +28,7 @@ namespace LiteLocalization.Runtime
         public LiteLocalizationManager()
         {
             _dataStorage  = new LiteLocalizationDataStorage(
-                "Localization", 
+                Path.Combine(Application.persistentDataPath, "Localization"), 
                 LiteLocalizationSettings.Instance.DefaultLanguage);
             
             _localizationTable = new LocalizationTable(
