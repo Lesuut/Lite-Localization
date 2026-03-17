@@ -39,26 +39,20 @@ namespace LiteLocalization.Runtime
                 List<string> row = new List<string>();
 
                 foreach (string cell in cells)
-                {
                     row.Add(cell.Trim());
-                }
 
                 _table.Add(row);
 
-                if (i == 0)
+                if (_table.Count == 1)
                 {
                     _locales = new List<string>(row);
                     for (int j = 1; j < _locales.Count; j++)
-                    {
                         _localeIndexMap[_locales[j]] = j;
-                    }
                 }
                 else
                 {
                     if (row.Count > 0)
-                    {
-                        _keyIndexMap[row[0]] = i;
-                    }
+                        _keyIndexMap[row[0]] = _table.Count - 1;
                 }
             }
         }
