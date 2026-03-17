@@ -27,7 +27,7 @@ namespace LiteLocalization.Runtime
             _localeIndexMap = new Dictionary<string, int>();
             _keyIndexMap = new Dictionary<string, int>();
 
-            string text = _textAsset.text;
+            string text = _textAsset.text.Replace("\r\n", "\n").Replace("\r", "\n");
             string[] lines = text.Split('\n');
 
             for (int i = 0; i < lines.Length; i++)
