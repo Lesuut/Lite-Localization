@@ -17,7 +17,6 @@ namespace LiteLocalization.Runtime.Data
 
         private void ParseCSV(string csvText)
         {
-            csvText = csvText.Replace("\r\n", "\n").Replace("\r", "\n");
             string[] lines = csvText.Split('\n');
 
             if (lines.Length < 2)

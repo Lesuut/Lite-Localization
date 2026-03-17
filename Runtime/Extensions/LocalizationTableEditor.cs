@@ -26,9 +26,8 @@ namespace LiteLocalization.Runtime
             _table = new List<List<string>>();
             _localeIndexMap = new Dictionary<string, int>();
             _keyIndexMap = new Dictionary<string, int>();
-
-            string text = _textAsset.text.Replace("\r\n", "\n").Replace("\r", "\n");
-            string[] lines = text.Split('\n');
+            
+            string[] lines = _textAsset.text.Split('\n');
 
             for (int i = 0; i < lines.Length; i++)
             {
@@ -91,10 +90,10 @@ namespace LiteLocalization.Runtime
 
         public void AddKey(string key, string sourceLocale)
         {
-            if (HasKey(key))
-            {
+            string cleanKey = key.Replace("\r", "").Replace("\n", "\\n");
+    
+            if (HasKey(cleanKey)) // ← cleanKey
                 return;
-            }
 
             if (!HasLocale(sourceLocale))
             {
@@ -103,20 +102,20 @@ namespace LiteLocalization.Runtime
             }
 
             List<string> newRow = new List<string>();
-            newRow.Add(key);
+            newRow.Add(cleanKey);
 
             for (int i = 1; i < _table[0].Count; i++)
             {
                 if (_table[0][i] == sourceLocale)
-                    newRow.Add(key);
+                    newRow.Add(cleanKey);
                 else
                     newRow.Add("");
             }
 
             _table.Add(newRow);
-            _keyIndexMap[key] = _table.Count - 1;
+            _keyIndexMap[cleanKey] = _table.Count - 1;
 
-# if UNITY_EDITOR
+#if UNITY_EDITOR
             SaveTable();
 #endif
         }
