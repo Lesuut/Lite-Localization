@@ -6,19 +6,30 @@ namespace LiteLocalization.Runtime.UI
 {
     public class TranslateText : MonoBehaviour
     {
+        [SerializeField] private string _key;
+
         private Text _text;
         private TMP_Text _textTMP;
-        private string _originalText;
 
+        private void Awake()
+        {
+            TryGetComponent(out _text);
+            TryGetComponent(out _textTMP);
+        }
+
+        private void OnValidate()
+        {
+            if (!string.IsNullOrEmpty(_key)) return;
+
+            if (TryGetComponent(out Text text) && !string.IsNullOrEmpty(text.text))
+                _key = text.text;
+            else if (TryGetComponent(out TMP_Text tmp) && !string.IsNullOrEmpty(tmp.text))
+                _key = tmp.text;
+        }
+        
         private void Start()
         {
-            if (TryGetComponent<Text>(out _text))
-                _originalText = _text.text;
-            else if (TryGetComponent<TMP_Text>(out _textTMP))
-                _originalText = _textTMP.text;
-            
             UpdateText();
-            
             LiteLocalizationManager.OnLanguageChanged += UpdateText;
         }
 
@@ -30,11 +41,16 @@ namespace LiteLocalization.Runtime.UI
 
         private void UpdateText()
         {
+            if (string.IsNullOrEmpty(_key))
+                return;
+
+            var translated = LiteLocalizationManager.Translate(_key);
+
             if (_text != null)
-                _text.text = LiteLocalizationManager.Translate(_originalText);
+                _text.text = translated;
 
             if (_textTMP != null)
-                _textTMP.text = LiteLocalizationManager.Translate(_originalText);
+                _textTMP.text = translated;
         }
     }
 }
