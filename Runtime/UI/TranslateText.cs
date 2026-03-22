@@ -6,6 +6,8 @@ namespace LiteLocalization.Runtime.UI
 {
     public class TranslateText : MonoBehaviour
     {
+        [SerializeField] private string _customCashText;
+        
         private Text _text;
         private TMP_Text _textTMP;
         private string _originalText;
@@ -31,10 +33,10 @@ namespace LiteLocalization.Runtime.UI
         private void UpdateText()
         {
             if (_text != null)
-                _text.text = LiteLocalizationManager.Translate(_originalText);
+                _text.text = LiteLocalizationManager.Translate(string.IsNullOrEmpty(_customCashText) ? _originalText : _customCashText);
 
             if (_textTMP != null)
-                _textTMP.text = LiteLocalizationManager.Translate(_originalText);
+                _textTMP.text = LiteLocalizationManager.Translate(string.IsNullOrEmpty(_customCashText) ? _originalText : _customCashText);
         }
     }
 }
