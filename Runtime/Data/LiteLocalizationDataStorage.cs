@@ -6,7 +6,8 @@ namespace LiteLocalization.Runtime.Data
     public class LiteLocalizationDataStorage
     {
         public LiteLocalizationData Data { get; private set; }
-        
+        public bool IsFirstRun { get; private set; }
+
         private readonly string _folderPath;
         private readonly string _filePath;
         private readonly string _defaultLanguageCode;
@@ -42,6 +43,7 @@ namespace LiteLocalization.Runtime.Data
         {
             if (!File.Exists(_filePath))
             {
+                IsFirstRun = true;
                 Debug.LogWarning($"[LiteLocalization] No saved data found. Creating new file at {_filePath}.");
                 var newData = new LiteLocalizationData()
                 {
@@ -51,6 +53,7 @@ namespace LiteLocalization.Runtime.Data
                 return newData;
             }
 
+            IsFirstRun = false;
             string json = File.ReadAllText(_filePath);
             var loadedData = JsonUtility.FromJson<LiteLocalizationData>(json);
 
