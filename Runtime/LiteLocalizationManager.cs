@@ -75,11 +75,15 @@ namespace LiteLocalization.Runtime
             OnLanguageChanged?.Invoke();
         }
         
-        public static string Translate(string key)
+        public static string Translate(string key, string sourceLanguage = null)
         {
+            var src = string.IsNullOrEmpty(sourceLanguage)
+                ? LiteLocalizationSettings.Instance.SourceLanguage
+                : sourceLanguage;
+
 # if UNITY_EDITOR
             if (!Instance._localizationTable.HasKey(key))
-                Instance._localizationTableEditor.AddKey(key, LiteLocalizationSettings.Instance.SourceLanguage);
+                Instance._localizationTableEditor.AddKey(key, src);
 #endif
 
             return Instance._localizationTable.GetCell(key, Instance._dataStorage.Data.LanguageCode);

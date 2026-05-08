@@ -1,8 +1,8 @@
 {
   "name": "com.gullsoft.litelocalization",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "displayName": "Lite Localization",
-  "description": "Lightweight Unity localization package with automatic CSV translation management. Key-free system where original text is the translation key. Simple setup for multi-language games and apps.",
+  "description": "Lightweight Unity localization package with automatic CSV translation management. Key-free system where original text is the translation key. Simple setup for multi-language games and apps.\n\nChangelog:\n\nv1.3.0\n- TranslateText component now has a Source Language dropdown in the Inspector. Set it to any language (e.g. Russian) so that component's text is treated as that language: on first play the key and value are written to the correct language column, leaving other columns (e.g. English) empty.\n- Translate(key, sourceLanguage) now accepts an optional second parameter to override the source language per call. When the key is not found in the CSV, the value is written to the specified language column instead of the global SourceLanguage.\n\nv1.2.0\n- Automatic device language detection on first run.\n- Extended SystemLanguage to ISO code mapping (46+ languages).\n\nv1.1.0\n- Added ChangeLanguageDropdown and ChangeLanguageTMPDropdown UI components.\n- Editor Settings Provider under Project Settings > Game > Lite Localization.\n\nv1.0.0\n- Initial release. Key-free CSV localization system.",
   "unity": "2022.1",
   "keywords": [
     "localization",
